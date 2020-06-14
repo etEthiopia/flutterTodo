@@ -67,7 +67,26 @@ class _MyHomePageState extends State<MyHomePage> {
                           style: intrayTitleStyle,
                         ),
                         Container()
-                      ]))
+                      ])),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    height: 80,
+                    width: 80,
+                    margin: EdgeInsets.only(top: 120),
+                    child: FloatingActionButton(
+                      elevation: 8,
+                      onPressed: () {},
+                      child: Icon(
+                        Icons.add,
+                        size: 70,
+                      ),
+                      backgroundColor: redColor,
+                    ),
+                  ),
+                ],
+              )
             ]),
             appBar: AppBar(
               elevation: 0,
