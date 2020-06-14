@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/pages/intray/intray_rename.dart';
 import 'models/global.dart';
 
 void main() => runApp(MyApp());
@@ -39,9 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
             body: Stack(children: <Widget>[
               TabBarView(
                 children: [
-                  new Container(
-                    color: darkGreyColor,
-                  ),
+                  IntrayPage(),
                   new Container(
                     color: Colors.orange,
                   ),
@@ -80,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {},
                       child: Icon(
                         Icons.add,
-                        size: 70,
+                        size: 75,
                       ),
                       backgroundColor: redColor,
                     ),
