@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children:<Widget>[TabBarView(
                 children: [
                   new Container(
-                    color: Colors.yellow,
+                    color: Colors.grey,
                   ),
                   new Container(color: Colors.orange,),
                   
@@ -53,13 +53,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 ], 
               ),
               Container(
-                height:100,
-                color: Colors.white
+                padding: EdgeInsets.only(left: 50),                  
+                height:160,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50)
+                  ),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text("Intray"),
+                    Container()
+                  ]
+                )
               )
                           ]
             ),
            
             appBar: AppBar(
+              elevation: 0,
               title: new TabBar(
               tabs: [
                 Tab(
@@ -77,8 +92,9 @@ class _MyHomePageState extends State<MyHomePage> {
               indicatorPadding: EdgeInsets.all(5.0),
               ),
 
+              backgroundColor: Colors.white,
             ),
-            backgroundColor: Colors.black,
+            backgroundColor: Colors.white,
           ),
         ),
       ),
