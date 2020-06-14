@@ -8,8 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        
+      theme: ThemeData( 
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -33,27 +32,35 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      
       color: Colors.yellow,
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
               child: DefaultTabController(
-          length: 4,
+          length: 3,
           child: new Scaffold(
-            body: TabBarView(
-              children: [
-                new Container(
-                  color: Colors.yellow,
-                ),
-                new Container(color: Colors.orange,),
-                new Container(
-                  color: Colors.lightGreen,
-                ),
-                new Container(
-                  color: Colors.red,
-                ),
-              ], 
+            body: Stack(
+                          children:<Widget>[TabBarView(
+                children: [
+                  new Container(
+                    color: Colors.yellow,
+                  ),
+                  new Container(color: Colors.orange,),
+                  
+                  new Container(
+                    color: Colors.red,
+                  ),
+                ], 
+              ),
+              Container(
+                height:100,
+                color: Colors.white
+              )
+                          ]
             ),
-            appBar: new TabBar(
+           
+            appBar: AppBar(
+              title: new TabBar(
               tabs: [
                 Tab(
                   icon: new Icon(Icons.home),
@@ -61,16 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 Tab(
                   icon: new Icon(Icons.rss_feed),
                 ),
-                Tab(
-                  icon: new Icon(Icons.perm_identity),
-                ),
+                
                 Tab(icon: new Icon(Icons.settings),)
               ],
               labelColor: Colors.yellow,
               unselectedLabelColor: Colors.blue,
               indicatorSize: TabBarIndicatorSize.label,
               indicatorPadding: EdgeInsets.all(5.0),
-              indicatorColor: Colors.red,
+              ),
+
             ),
             backgroundColor: Colors.black,
           ),
